@@ -14,6 +14,7 @@ bool up = false;
 bool down = false;
 bool left = false;
 bool right = false;
+bool space = false;
 
 /* Variables */
 int speed = 0;
@@ -58,11 +59,13 @@ void eventPart(){
         if(mainEvent.type == sf::Event::KeyPressed && mainEvent.key.code == sf::Keyboard::Down) down = true;
         if(mainEvent.type == sf::Event::KeyPressed && mainEvent.key.code == sf::Keyboard::Left) left = true;
         if(mainEvent.type == sf::Event::KeyPressed && mainEvent.key.code == sf::Keyboard::Right) right = true;
+        if(mainEvent.type == sf::Event::KeyPressed && mainEvent.key.code == sf::Keyboard::Space) space = true;
         /* Released */
         if(mainEvent.type == sf::Event::KeyReleased && mainEvent.key.code == sf::Keyboard::Up) up = false;
         if(mainEvent.type == sf::Event::KeyReleased && mainEvent.key.code == sf::Keyboard::Down) down = false;
         if(mainEvent.type == sf::Event::KeyReleased && mainEvent.key.code == sf::Keyboard::Left) left = false;
         if(mainEvent.type == sf::Event::KeyReleased && mainEvent.key.code == sf::Keyboard::Right) right = false;
+        if(mainEvent.type == sf::Event::KeyReleased && mainEvent.key.code == sf::Keyboard::Space) space = false;
     }
 }
 
