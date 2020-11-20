@@ -7,7 +7,7 @@
 
 /*Public parameters*/
 // Main window where it is displayed the screen
-//sf::RenderWindow mainWindow(sf::VideoMode(800,600), "SimplePong Game", sf::Style::Close | sf::Style::Titlebar);
+sf::RenderWindow mainWindow(sf::VideoMode(800,600), "SimplePong Game", sf::Style::Close | sf::Style::Titlebar);
 // Event object
 sf::Event mainEvent;
 bool up = false;
@@ -20,17 +20,29 @@ int speed = 0;
 int status;
 
 /*game part functions*/
+void initWindow();
 void eventPart();
 void logicPart();
 
 int main() {
+    /*Window creation and settings*/
+    initWindow();
     std::cout<<"Robot started! You can handle it with arrow keys, enjoy!"<<std::endl;
     /* Main Game Loop */
-    while(1){
+    while(mainWindow.isOpen()){
         /* Event part */
         eventPart();
         logicPart();
+        mainWindow.clear();
+        mainWindow.draw(background);
+        mainWindow.display();
     }
+}
+
+/* Window initialization */
+void initWindow(){
+    mainWindow.setFramerateLimit(60);
+    std::cout << "Game started" << std::endl;
 }
 
 /* Events part */
