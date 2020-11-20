@@ -45,7 +45,14 @@ void initWindow(){
 /* Events part */
 void eventPart(){
     while(mainWindow.pollEvent(mainEvent)){
-        if(mainEvent.type == sf::Event::Closed) mainWindow.close();
+        if(mainEvent.type == sf::Event::Closed){
+            mainWindow.close();
+            //SE NESSUN TASTO È PREMUTO ALLORA FERMO TUTTO
+            //pausa gli altri comandi
+            status=system("python3 movements/pause.py");
+            //uccido gli altri comandi
+            status=system("sudo killall python3");
+        } 
         /* Pressed */
         if(mainEvent.type == sf::Event::KeyPressed && mainEvent.key.code == sf::Keyboard::Up) up = true;
         if(mainEvent.type == sf::Event::KeyPressed && mainEvent.key.code == sf::Keyboard::Down) down = true;
