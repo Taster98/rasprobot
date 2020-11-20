@@ -9,8 +9,8 @@ int main(){
     int status;
     int count = 0;
     while(1){
-        if ( _kbhit() ){
-            input = _getch();
+        if (kbhit()){
+            input = getch();
             switch(input){
                 case 'w':
                     if(count > 0){
