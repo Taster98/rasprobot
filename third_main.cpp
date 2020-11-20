@@ -7,7 +7,7 @@
 
 /*Public parameters*/
 // Main window where it is displayed the screen
-sf::RenderWindow mainWindow(sf::VideoMode(800,600), "SimplePong Game", sf::Style::Close | sf::Style::Titlebar);
+sf::RenderWindow mainWindow(sf::VideoMode(400,200), "SimplePong Game", sf::Style::Close | sf::Style::Titlebar);
 // Event object
 sf::Event mainEvent;
 bool up = false;
@@ -34,7 +34,6 @@ int main() {
         /* Event part */
         eventPart();
         logicPart();
-        mainWindow.clear();
         mainWindow.display();
     }
 }
