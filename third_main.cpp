@@ -44,7 +44,8 @@ void initWindow(){
 
 /* Events part */
 void eventPart(){
-    while(1){
+    while(mainWindow.pollEvent(mainEvent)){
+        if(mainEvent.type == sf::Event::Closed) mainWindow.close();
         /* Pressed */
         if(mainEvent.type == sf::Event::KeyPressed && mainEvent.key.code == sf::Keyboard::Up) up = true;
         if(mainEvent.type == sf::Event::KeyPressed && mainEvent.key.code == sf::Keyboard::Down) down = true;
