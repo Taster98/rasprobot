@@ -84,5 +84,3 @@ void logicPart(){
         status = system("python3 movements/right.py&");
     }
 }
-
-}
