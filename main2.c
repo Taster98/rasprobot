@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <curses.h>
+#include "kbstuff.h"
 
 int main(){
     printf("Hey there! To control your dalek, press the keywords w-> forward, d-> right, s->backward, a->left, p->stop, n->quit the program, then enter!\n");
