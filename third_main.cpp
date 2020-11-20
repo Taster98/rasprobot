@@ -68,29 +68,32 @@ void logicPart(){
         status=system("sudo killall python3");
         //avvio il comando avanti
         status = system("python3 movements/forward.py&");
-    }
-    if(down){
+    }else if(down){
         //pausa gli altri comandi
         status=system("python3 movements/pause.py");
         //uccido gli altri comandi
         status=system("sudo killall python3");
         //avvio il comando avanti
         status = system("python3 movements/backward.py&");
-    }
-    if(left){
+    }else if(left){
         //pausa gli altri comandi
         status=system("python3 movements/pause.py");
         //uccido gli altri comandi
         status=system("sudo killall python3");
         //avvio il comando avanti
         status = system("python3 movements/left.py&");
-    }
-    if(right){
+    }else if(right){
         //pausa gli altri comandi
         status=system("python3 movements/pause.py");
         //uccido gli altri comandi
         status=system("sudo killall python3");
         //avvio il comando avanti
         status = system("python3 movements/right.py&");
+    }else{
+        //SE NESSUN TASTO È PREMUTO ALLORA FERMO TUTTO
+        //pausa gli altri comandi
+        status=system("python3 movements/pause.py");
+        //uccido gli altri comandi
+        status=system("sudo killall python3");
     }
 }
