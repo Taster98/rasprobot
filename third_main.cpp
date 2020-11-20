@@ -40,7 +40,6 @@ int main() {
 
 /* Window initialization */
 void initWindow(){
-    mainWindow.setFramerateLimit(60);
     std::cout << "Game started" << std::endl;
 }
 
