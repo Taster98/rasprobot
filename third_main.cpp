@@ -34,7 +34,6 @@ int main() {
         eventPart();
         logicPart();
         mainWindow.clear();
-        mainWindow.draw(background);
         mainWindow.display();
     }
 }
