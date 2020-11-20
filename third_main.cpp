@@ -89,7 +89,7 @@ void logicPart(){
         status=system("sudo killall python3");
         //avvio il comando avanti
         status = system("python3 movements/right.py&");
-    }else{
+    }else if(!right && !left && !up && !down){
         //SE NESSUN TASTO È PREMUTO ALLORA FERMO TUTTO
         //pausa gli altri comandi
         status=system("python3 movements/pause.py");
