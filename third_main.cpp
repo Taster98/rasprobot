@@ -27,7 +27,6 @@ void logicPart();
 int main() {
     /*Window creation and settings*/
     initWindow();
-    status = system("python3 movements/forward.py&");
     std::cout<<"Robot started! You can handle it with arrow keys, enjoy!"<<std::endl;
     /* Main Game Loop */
     while(mainWindow.isOpen()){
