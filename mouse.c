@@ -14,6 +14,7 @@ int main(int argc, char **argv)
     Display *display;
     XEvent xevent;
     Window window;
+    int prevx=0, prevy=0;
 
     if( (display = XOpenDisplay(NULL)) == NULL )
         return -1;
@@ -38,6 +39,7 @@ int main(int argc, char **argv)
         switch (xevent.type) {
             case MotionNotify:
                 printf("Mouse move      : [%d, %d]\n", xevent.xmotion.x_root, xevent.xmotion.y_root);
+                
                 break;
             case ButtonPress:
                 printf("Button pressed  : %s\n", key_name[xevent.xbutton.button - 1]);
