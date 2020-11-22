@@ -1,7 +1,9 @@
 #include <X11/Xlib.h>
+#include <X11/Xlib/Xkb.h>
 #include <stdio.h>
 #include <stdlib.h>
- 
+#include <stdbool.h>
+
 int main()
 {
     Display *display;
@@ -28,7 +30,8 @@ int main()
     
     /* map (show) the window */
     XMapWindow(display, window);
-    XAutoRepeatOff(display);
+    bool det = 1;
+    XkbSetDetectableAutoRepeat (display, det, NULL);
     /* event loop */
     while (1)
     {
