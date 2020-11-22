@@ -10,6 +10,7 @@ int main()
     int s;
     int status;
     int count = 0;
+    int prev = 0;
     /* open connection with the server */
     display = XOpenDisplay(NULL);
     if (display == NULL)
@@ -42,7 +43,7 @@ int main()
             if(count == 0){
                 count++;
                 // UP (w)
-                if (event.xkey.keycode == 0x19){
+                if (event.xkey.keycode == 0x19 && prev != 0x19){
                     // Pausa e
                     //status=system("python3 movements/pause.py");
                     //status=system("sudo killall python3");
@@ -50,7 +51,7 @@ int main()
                     status=system("python3 movements/forward.py&");
                 }
                 // DOWN (s)
-                if (event.xkey.keycode == 0x27){
+                if (event.xkey.keycode == 0x27 && prev != 0x27){
                     // Pausa e
                     //status=system("python3 movements/pause.py");
                     //status=system("sudo killall python3");
@@ -58,7 +59,7 @@ int main()
                     status=system("python3 movements/backward.py&");
                 }
                 // LEFT (a)
-                if (event.xkey.keycode == 0x26){
+                if (event.xkey.keycode == 0x26 && prev != 0x26){
                     // Pausa e 
                     //status=system("python3 movements/pause.py");
                     //status=system("sudo killall python3");
@@ -66,7 +67,7 @@ int main()
                     status=system("python3 movements/left.py&");
                 }
                 // RIGHT (d)
-                if (event.xkey.keycode == 0x28){
+                if (event.xkey.keycode == 0x28 && prev != 0x28){
                     // Pausa e
                     //status=system("python3 movements/pause.py");
                     //status=system("sudo killall python3");
