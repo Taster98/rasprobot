@@ -32,55 +32,55 @@ int main(){
         input = getch();
         switch(input){
             case 'w':
-                //if(count > 0){
+                if(count > 0){
                     fprintf(stdout, "Ho premuto avanti\n");
                     fflush(stdout);
-                    //status=system("python3 movements/pause.py");
-                    //status=system("sudo killall python3");
-                //}
-                //count++;
+                    status=system("python3 movements/pause.py");
+                    status=system("sudo killall python3");
+                }
+                count++;
                 //forward.py
-                //status = system("python3 movements/forward.py&");
+                status = system("python3 movements/forward.py&");
                 break;
             case 's':
-                //if(count > 0){
+                if(count > 0){
                     fprintf(stdout, "Ho premuto indietro\n");
                     fflush(stdout);
-                    //status=system("python3 movements/pause.py");
-                    //status=system("sudo killall python3");
-                //}
-                /*count++;
+                    status=system("python3 movements/pause.py");
+                    status=system("sudo killall python3");
+                }
+                count++;
                 //backward.py
-                status = system("python3 movements/backward.py&");*/
+                status = system("python3 movements/backward.py&");
             break;
             case 'd':
-                //if(count > 0){
+                if(count > 0){
                     fprintf(stdout, "Ho premuto destra\n");
                     fflush(stdout);
-                    //status=system("python3 movements/pause.py");
-                    //status=system("sudo killall python3");
-                //}
-                /*count++;
+                    status=system("python3 movements/pause.py");
+                    status=system("sudo killall python3");
+                }
+                count++;
                 //right.py
-                status = system("python3 movements/right.py&");*/
+                status = system("python3 movements/right.py&");
             break;
             case 'a':
-                //if(count > 0){
+                if(count > 0){
                     fprintf(stdout, "Ho premuto sinistra\n");
                     fflush(stdout);
-                    //status=system("python3 movements/pause.py");
-                    //status=system("sudo killall python3");
-                //}
-                //count++;
+                    status=system("python3 movements/pause.py");
+                    status=system("sudo killall python3");
+                }
+                count++;
                 //left.py
-                //status = system("python3 movements/left.py&");
+                status = system("python3 movements/left.py&");
             break;
             case 'p':
                 if(count > 0){
                     fprintf(stdout, "Ho premuto pausa\n");
                     fflush(stdout);
-                    /*status=system("python3 movements/pause.py");
-                    status=system("sudo killall python3");*/
+                    status=system("python3 movements/pause.py");
+                    status=system("sudo killall python3");
                 }
             break;
             case 'n':
