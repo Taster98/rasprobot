@@ -84,8 +84,8 @@ int main()
         else if (event.type == KeyRelease)
         {
             printf( "KeyRelease: %x\n", event.xkey.keycode );
-            status=system("python3 movements/pause.py");
-            status=system("sudo killall python3");
+            //status=system("python3 movements/pause.py");
+            //status=system("sudo killall python3");
         }
     }
 
