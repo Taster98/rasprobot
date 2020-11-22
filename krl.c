@@ -9,6 +9,7 @@ int main()
     XEvent event;
     int s;
     int status;
+    int count = 0;
     /* open connection with the server */
     display = XOpenDisplay(NULL);
     if (display == NULL)
@@ -38,54 +39,60 @@ int main()
         if (event.type == KeyPress)
         {
             printf( "KeyPress: %x\n", event.xkey.keycode );
-
-            // UP (w)
-            if (event.xkey.keycode == 0x19){
-                // Pausa e
-                status=system("python3 movements/pause.py");
-                status=system("sudo killall python3");
-                // Up
-                status=system("python3 movements/forward.py&");
+            if(count == 0){
+                count++;
+                // UP (w)
+                if (event.xkey.keycode == 0x19){
+                    // Pausa e
+                    //status=system("python3 movements/pause.py");
+                    //status=system("sudo killall python3");
+                    // Up
+                    status=system("python3 movements/forward.py&");
+                }
+                // DOWN (s)
+                if (event.xkey.keycode == 0x27){
+                    // Pausa e
+                    //status=system("python3 movements/pause.py");
+                    //status=system("sudo killall python3");
+                    // Down
+                    status=system("python3 movements/backward.py&");
+                }
+                // LEFT (a)
+                if (event.xkey.keycode == 0x26){
+                    // Pausa e 
+                    //status=system("python3 movements/pause.py");
+                    //status=system("sudo killall python3");
+                    // Sinistra
+                    status=system("python3 movements/left.py&");
+                }
+                // RIGHT (d)
+                if (event.xkey.keycode == 0x28){
+                    // Pausa e
+                    //status=system("python3 movements/pause.py");
+                    //status=system("sudo killall python3");
+                    // Destra
+                    status=system("python3 movements/right.py&");
+                }
+                // PAUSE (p)
+                if (event.xkey.keycode == 0x21){
+                    status=system("python3 movements/pause.py");
+                    status=system("sudo killall python3");
+                }
+                //EXIT (n)
+                if (event.xkey.keycode == 0x39){
+                    break;
+                }
             }
-            // DOWN (s)
-            if (event.xkey.keycode == 0x27){
-                // Pausa e
-                status=system("python3 movements/pause.py");
-                status=system("sudo killall python3");
-                // Down
-                status=system("python3 movements/backward.py&");
-            }
-            // LEFT (a)
-            if (event.xkey.keycode == 0x26){
-                // Pausa e 
-                status=system("python3 movements/pause.py");
-                status=system("sudo killall python3");
-                // Sinistra
-                status=system("python3 movements/left.py&");
-            }
-            // RIGHT (d)
-            if (event.xkey.keycode == 0x28){
-                // Pausa e
-                status=system("python3 movements/pause.py");
-                status=system("sudo killall python3");
-                // Destra
-                status=system("python3 movements/right.py&");
-            }
-            // PAUSE (p)
-            if (event.xkey.keycode == 0x21){
-                status=system("python3 movements/pause.py");
-                status=system("sudo killall python3");
-            }
-            //EXIT (n)
-            if (event.xkey.keycode == 0x39){
-                break;
-            }
+            
         }
         else if (event.type == KeyRelease)
         {
-            printf( "KeyRelease: %x\n", event.xkey.keycode );
-            //status=system("python3 movements/pause.py");
-            //status=system("sudo killall python3");
+            if(count>0){
+                printf( "KeyRelease: %x\n", event.xkey.keycode );
+                status=system("python3 movements/pause.py");
+                status=system("sudo killall python3");
+                count = 0;
+            }
         }
     }
 
