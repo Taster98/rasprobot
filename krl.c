@@ -27,10 +27,11 @@ int main()
  
     /* select kind of events we are interested in */
     XSelectInput(display, window, KeyPressMask | KeyReleaseMask );
- 
+    
     /* map (show) the window */
     XMapWindow(display, window);
- 
+    int autorepeat_supported = 1;
+    XkbSetDetectableAutoRepeat(display, 1, &autorepeat_supported);
     /* event loop */
     while (1)
     {
