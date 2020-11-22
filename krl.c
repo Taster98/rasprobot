@@ -44,6 +44,7 @@ int main()
                 count++;
                 // UP (w)
                 if (event.xkey.keycode == 0x19 && prev != 0x19){
+                    prev = event.xkey.keycode;
                     // Pausa e
                     //status=system("python3 movements/pause.py");
                     //status=system("sudo killall python3");
@@ -52,6 +53,7 @@ int main()
                 }
                 // DOWN (s)
                 if (event.xkey.keycode == 0x27 && prev != 0x27){
+                    prev = event.xkey.keycode;
                     // Pausa e
                     //status=system("python3 movements/pause.py");
                     //status=system("sudo killall python3");
@@ -60,6 +62,7 @@ int main()
                 }
                 // LEFT (a)
                 if (event.xkey.keycode == 0x26 && prev != 0x26){
+                    prev = event.xkey.keycode;
                     // Pausa e 
                     //status=system("python3 movements/pause.py");
                     //status=system("sudo killall python3");
@@ -68,6 +71,7 @@ int main()
                 }
                 // RIGHT (d)
                 if (event.xkey.keycode == 0x28 && prev != 0x28){
+                    prev = event.xkey.keycode;
                     // Pausa e
                     //status=system("python3 movements/pause.py");
                     //status=system("sudo killall python3");
