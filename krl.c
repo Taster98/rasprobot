@@ -30,7 +30,7 @@ int main()
     
     /* map (show) the window */
     XMapWindow(display, window);
-    XAutoRepeatOff(&display);
+    XAutoRepeatOff(display);
     /* event loop */
     while (1)
     {
