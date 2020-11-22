@@ -2,10 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <X11/Xutil.h>
-#include <X11/Xos.h>
-#include <X11/Xatom.h>
-#include <X11/keysym.h>
 
 int main()
 {
@@ -33,8 +29,6 @@ int main()
     
     /* map (show) the window */
     XMapWindow(display, window);
-    bool det = 1;
-    XkbSetDetectableAutoRepeat (display, det, NULL);
     /* event loop */
     while (1)
     {
