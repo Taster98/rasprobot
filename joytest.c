@@ -1,20 +1,10 @@
 /**
- * Author: Jason White
- *
- * Description:
- * Reads joystick/gamepad events and displays them.
- *
- * Compile:
- * gcc joystick.c -o joystick
- *
- * Run:
- * ./joystick [/dev/input/jsX]
- *
- * See also:
- * https://www.kernel.org/doc/Documentation/input/joystick-api.txt
+ * The below code is written based on this:
+ * https://gist.github.com/jasonwhite/c5b2048c15993d285130
  */
 #include <fcntl.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <linux/joystick.h>
 
@@ -95,6 +85,8 @@ size_t get_axis_state(struct js_event *event, struct axis_state axes[3])
 
 int main(int argc, char *argv[])
 {
+    //Run new terminal window
+    system("xterm -e ssh pi@192.168.1.192");
     const char *device;
     int js;
     struct js_event event;
