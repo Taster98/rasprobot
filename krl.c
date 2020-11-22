@@ -30,8 +30,7 @@ int main()
     
     /* map (show) the window */
     XMapWindow(display, window);
-    int autorepeat_supported = 1;
-    XkbSetDetectableAutoRepeat(display, 1, &autorepeat_supported);
+    XAutoRepeatOff(&display);
     /* event loop */
     while (1)
     {
